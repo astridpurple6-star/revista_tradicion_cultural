@@ -1,0 +1,539 @@
+/* ==========================================================
+   VARIABLES DE COLOR (PALETA DIGITAL)
+   ========================================================== */
+:root {
+  /* Patrimonio y Solidez */
+  --color-tierra-quemada: #A85A3F;
+  --color-crema-hueso: #F8F7F3;
+  --color-verde-oliva: #465945;
+  
+  /* Resistencia y Urgencia */
+  --color-rojo-ladrillo: #C22F2F;
+  --color-azul-profundo: #004785;
+  --color-amarillo-brillante: #FFD900;
+  
+  --color-texto-principal: #1A1A1A;
+}
+
+/* ==========================================================
+   ESTILOS BASE Y TIPOGRAFÍA
+   ========================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFF;
+    color: var(--color-texto-principal);
+    -webkit-font-smoothing: antialiased;
+    font-size: 100%;
+}
+
+/* Scroll suave para navegación interna */
+html {
+    scroll-behavior: smooth; 
+}
+
+.contenedor-articulo {
+  max-width: 850px; /* Ancho máximo para la lectura en pantallas grandes */
+  margin: 0 auto;
+  padding: 0 1rem; /* Padding lateral en móvil para que respire */
+}
+
+/* Tipografía de Títulos de Impacto (Montserrat Black) */
+.titulo-impacto, h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900; /* Black */
+  font-size: clamp(2.5rem, 8vw, 4rem); /* Responsive font size */
+  color: var(--color-rojo-ladrillo);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* Tipografía de Secciones y Subtítulos (Lora Bold) */
+.subtitulo-seccion, h2, h3 {
+  font-family: 'Lora', serif;
+  font-weight: 700; /* Bold */
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--color-azul-profundo);
+  margin-top: 2.5rem;
+}
+
+/* Tipografía del Cuerpo de Texto (Crimson Text) */
+.cuerpo-texto, p {
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  font-size: 1.125rem; /* 18px para móvil, mejor legibilidad */
+  line-height: 1.7; 
+  color: var(--color-texto-principal);
+}
+
+.meta-data {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-verde-oliva);
+}
+
+/* ==========================================================
+   SECCIÓN DE PATRIMONIO CULTURAL
+   ========================================================== */
+
+.patrimonio-cultural {
+    background-color: var(--color-crema-hueso);
+    padding: 3rem 2rem;
+    margin: 2rem 0;
+}
+
+.patrimonio-cultural .titulo-impacto {
+    color: var(--color-rojo-ladrillo);
+    margin-bottom: 1rem;
+}
+
+.patrimonio-cultural .subtitulo-seccion {
+    color: var(--color-verde-oliva);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.imagen-patrimonio {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.imagen-patrimonio img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen-patrimonio figcaption {
+    margin-top: 1rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.narrativa-patrimonio {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #FFF;
+}
+
+.narrativa-patrimonio .cuerpo-texto {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.narrativa-patrimonio .cuerpo-texto:last-child {
+    margin-bottom: 0;
+}
+
+/* Estilo para el mantra de resistencia */
+.mantra-resistencia {
+    background-color: var(--color-amarillo-brillante);
+    border: 3px solid var(--color-rojo-ladrillo);
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.seccion-gentrificacion {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--color-verde-oliva);
+}
+
+/* ==========================================================
+   NAVEGACIÓN INTERNA (ÍNDICE) Y CAJA DE INTERVENCIÓN
+   ========================================================== */
+
+.indice-articulo {
+    background-color: var(--color-crema-hueso);
+    border: 1px solid var(--color-tierra-quemada);
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.indice-articulo ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.link-indice {
+    font-family: 'Lora', serif; 
+    color: var(--color-azul-profundo);
+    text-decoration: underline;
+    display: block;
+    padding: 3px 0;
+}
+
+.caja-intervencion {
+  /* La 'Caja de Herramientas' que rompe el flujo */
+  background-color: var(--color-tierra-quemada);
+  color: var(--color-crema-hueso);
+  padding: 2rem 1.5rem;
+  margin: 3rem 0; 
+  border-left: 10px solid var(--color-rojo-ladrillo);
+}
+
+.caja-intervencion h3 {
+    color: inherit;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ==========================================================
+   LÓGICA RESPONSIVA DE COLUMNAS DE TEXTO Y MEDIOS (MOBILE FIRST)
+   ========================================================== */
+
+/* ------------------ REJILLA DE VIDEOS ------------------ */
+
+.video-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* MÓDULO 6 VIDEOS (Resistencia) - Móvil: 2 columnas */
+.video-grid-6 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* MÓDULO 3 VIDEOS (Patrimonio) - Móvil: 1 columna (más grande) */
+.video-grid-3 {
+  grid-template-columns: 1fr;
+}
+
+/* ------------------ LISTA DE URLs DE VIDEOS ------------------ */
+
+.lista-urls-videos {
+  margin: 2rem 0;
+}
+
+.item-url-video {
+  margin-bottom: 1.5rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.item-url-video:last-child {
+  margin-bottom: 0;
+}
+
+.url-video {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: var(--color-azul-profundo);
+  word-break: break-all;
+  margin-top: 0.5rem;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.url-video a {
+  color: var(--color-azul-profundo);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.url-video a:hover {
+  color: var(--color-rojo-ladrillo);
+  text-decoration: none;
+}
+
+.video-item-small {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    min-height: 150px;
+    position: relative;
+    border: 2px solid var(--color-azul-profundo);
+}
+
+.video-item-small img { display: none; } /* Ocultar la etiqueta img en favor del background-image */
+
+.video-item-small p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.video-item-large iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantiene la relación de aspecto 16:9 */
+    height: auto;
+}
+
+/* ------------------ REJILLA DE NARRATIVAS ------------------ */
+
+.narrativas-emprendedores {
+    margin-top: 4rem;
+    display: grid;
+    gap: 3rem;
+}
+
+.narrativa-modulo {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-verde-oliva);
+}
+
+.foto-emprendedor img {
+    width: 100%;
+    height: auto;
+    max-width: 400px;
+    display: block;
+    margin: 1.5rem auto;
+    border: 3px solid var(--color-tierra-quemada);
+    border-radius: 5px;
+}
+
+/* Videos pequeños en narrativas */
+.narrativa-con-video {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.video-pequeno-narrativa {
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    text-align: center;
+}
+
+.video-pequeno-narrativa video {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid var(--color-azul-profundo);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-pequeno-emprendedor {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1rem;
+}
+
+.video-enlace-pequeno {
+    display: block;
+    background-color: var(--color-azul-profundo);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-enlace-pequeno:hover {
+    background-color: var(--color-rojo-ladrillo);
+    color: white;
+}
+
+.video-enlace-pequeno p {
+    margin: 0;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.contenido-narrativa {
+    flex: 1;
+}
+
+
+/* ==========================================================
+   MEDIA QUERIES (TABLET & DESKTOP: > 768px)
+   ========================================================== */
+
+@media (min-width: 768px) {
+    /* --- TEXTO DE 2 COLUMNAS --- */
+    .article-body-text {
+        column-count: 2;
+        column-gap: 2.5rem; 
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Elementos que ROMPEN las columnas */
+    .foto-columna-integrada, .caja-intervencion {
+        column-span: all;
+        -webkit-column-span: all;
+    }
+
+    /* --- REJILLAS DE VIDEOS --- */
+    .video-grid-6 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .video-grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* --- NARRATIVAS DE EMPRENDEDORES --- */
+    .narrativa-modulo {
+        display: grid;
+        grid-template-columns: 1fr 3fr; 
+        gap: 2rem;
+    }
+
+    .narrativa-con-video {
+        display: grid;
+        grid-template-columns: 1fr 3fr; 
+        gap: 2rem;
+    }
+
+    .video-pequeno-narrativa {
+        order: -1;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .video-pequeno-narrativa video {
+        max-width: 300px;
+    }
+
+    .video-pequeno-emprendedor {
+        order: -1;
+        max-width: 250px;
+        margin: 0;
+    }
+    
+    .foto-emprendedor {
+        order: -1; 
+        margin: 0;
+    }
+    
+    .foto-emprendedor img {
+        max-width: 200px; /* Tamaño más pequeño en la columna lateral */
+    }
+
+    .contenido-narrativa {
+        grid-column: 2 / 3;
+    }
+
+    .caja-intervencion {
+        grid-column: 2 / 3; 
+    }
+}
+
+/* ==========================================================
+   ESTILOS PARA EL MODAL DE VIDEO (USADO POR JAVASCRIPT)
+   ========================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    background: black;
+    padding: 20px;
+}
+
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: -40px; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ==========================================================
+   Galeria Imagenes footer
+   ========================================================== */
+/* Contenedor grid */
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columnas iguales */
+    gap: 20px; /* espacio entre columnas/filas */
+    align-items: start;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  /* Cada figura */
+  .galeria figure {
+    margin: 0;
+    text-align: center;
+    display: block; /* por claridad */
+  }
+
+  /* Imagen: evita que la imagen obligue a la columna a crecer */
+  .galeria img {
+    display: block;       /* elimina espacios en línea */
+    width: 100%;          /* ocupa el ancho de la columna */
+    height: auto;         /* mantiene la proporción */
+    max-height: 220px;    /* opcional: recorta alto grande (ajusta a tu gusto) */
+    object-fit: contain;  /* conserva la imagen dentro del recuadro */
+    border-radius: 6px;
+  }
+
+  .meta-data {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  /* Responsive: en pantallas pequeñas pasa a 1 columna */
+  @media (max-width: 600px) {
+    .galeria {
+      grid-template-columns: 1fr;
+    }
+  }
